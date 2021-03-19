@@ -22,23 +22,32 @@
 Проверить, чтобы все работало без ошибок в консоли */
 
 'use strict';
-const numberofFilms = +prompt("Сколько фильмов вы уже посмотрели?", "");
- const PERSONALlMovieDB =
-{
-    count: numberofFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false,
+
+if (4 == 9) {
+    console.log("that's good")
+} else {
+    console.log("that's  bad(")
 }
 
-const a = prompt  ("Один из последних просмотренных фильмов", ""),
-      b = +prompt("На сколько оцените его?", ""),
-      c = prompt("Один из последних просмотренных фильмов", ""),
-      d = +prompt("На сколько оцените его?", "");
-      
-PERSONALlMovieDB.movies[a] = b;
-PERSONALlMovieDB.movies[c] = d;
-
-console.log(PERSONALlMovieDB);
-
+let maybe = 9;
+if (maybe % 2 == 0) {
+    console.log(maybe / 2)
+} else
+if (maybe > 10) {
+    maybe = maybe - 1;
+    console.log(maybe / 2);
+} else {
+    console.log(maybe * 2138);
+}
+let num = 50;
+(num === 50) ? console.log("that's right"): console.log("bad things happens");
+switch (num){
+    case 49: console.log("Тепло") ;
+    break;
+    case 121: console.log("Холодно");
+    break;
+    case 69: console.log("Правильно!");
+    break;
+    default:
+        console.log("Вообще куда-то не туда")
+}
