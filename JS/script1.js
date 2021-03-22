@@ -33,4 +33,4 @@ const logger = function () {
 
 logger();
 const clc = (a,b ) =>  { return a + b} ;
-console.log(clc(4,5));
+console.log(clc(4,5)); 
