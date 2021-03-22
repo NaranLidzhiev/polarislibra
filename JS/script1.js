@@ -12,35 +12,65 @@
 
 4) Потренироваться и переписать цикл еще двумя способами*/
 
-'use strict';
 
-const n = +prompt("Сколько фильмов вы просмотрели", "");
-let a =[];
- for (let i =0; i< n ; i ++)
- {
-      a[i] = prompt("фильм ", "" )
-      if ((a[i]  == "")  || (a[i] =="cancel"))
-      {
-         console.log("так нельзя ") ;
-         break;
-      }
- }
- if (n<10)
- {
-    console.log("Просмотрено удивительно малое количество фильмов ") ;
- }
- if (n<30 && n > 10)
- {
-    console.log("Вы средний класс ") ;
- }
- if (n>30)
- {
-    console.log("Вы задрот ") ;
- }
- for (let i =0; i < n; i ++)
- {
-     console.log(a[i]);
- }
+
+// const n = +prompt("Сколько фильмов вы просмотрели", "");
+// let a =[];
+//  for (let i =0; i< n ; i ++)
+//  {
+//       a[i] = prompt("фильм ", "" )
+//       if ((a[i]  == "")  || (a[i] =="cancel"))
+//       {
+//          console.log("так нельзя ") ;
+//          break;
+//       }
+//  }
+
 
 // Код возьмите из предыдущего домашнего задания
 
+
+'use strict';
+const numberofFilms = +prompt("сколько фильмов вы уже просмотрели?");
+
+const personalMovieDB = {
+   count: numberofFilms,
+   movies: {},
+   actors: {},
+   genres: [],
+   privat: false
+
+};
+
+
+
+for (let i = 0; i < 2; i++) {
+   const a = prompt('Один из последних просмотренных фильмов', ''),
+         b = +prompt('На сколько оцените его ?', '');
+   
+   if ( a != null && b != null && a != '' && b != '' && a.length < 50)
+   {
+      personalMovieDB.movies[a] = b;
+      console.log('done');
+   } else {
+      console.log('error');
+      i--;
+   }
+}
+if (personalMovieDB.count<10)
+{
+   console.log("Просмотрено удивительно малое количество фильмов ") ;
+}
+else 
+if (personalMovieDB.count<30 && personalMovieDB.count > 10)
+{
+   console.log("Вы средний класс ") ;
+}
+else
+if (personalMovieDB.count>30)
+{
+   console.log("Вы задрот ") ;
+}
+
+ 
+console.log(personalMovieDB);
