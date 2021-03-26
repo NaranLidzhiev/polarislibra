@@ -12,33 +12,28 @@ genres
 P.S. Функции вызывать не обязательно*/
 
 'use strict';
-function first()
+
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+       border: 'black',
+       bg: 'red'
+    }
+}
+//console.log(options["colors"]["border"]);
+
+// delete options.name;
+// console.log(options);
+
+for (let key in options)
 {
-   // Do something
-   setTimeout(function()
+   if (typeof(options[key]) === 'object')
    {
-      console.log(1);
-   }, 500)
-
+      for (let i in options[key])
+      {
+         console.log( `Свойство ${key} имеет значение ${options[key][i]}`);
+      }
+   } else  {console.log( `Свойство ${key} имеет значение ${options[key]}`);}
 }
-
-function second ()
-{
-   console.log(2);
-}
-
-first()
-second()
-
-function learnJS(lang, callback)
-{
-   console.log(`я учу: ${lang}`)
-   callback();
-}
-
-function done()
-{
-   console.log('я прошел этот урок!');
-}
-
-learnJS('JavaScript', done);
