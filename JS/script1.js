@@ -26,7 +26,7 @@ const options = {
 
 // delete options.name;
 // console.log(options);
-
+let counter =0;
 for (let key in options)
 {
    if (typeof(options[key]) === 'object')
@@ -34,6 +34,9 @@ for (let key in options)
       for (let i in options[key])
       {
          console.log( `Свойство ${key} имеет значение ${options[key][i]}`);
+         counter++
       }
-   } else  {console.log( `Свойство ${key} имеет значение ${options[key]}`);}
+   } else  {console.log( `Свойство ${key} имеет значение ${options[key]}`); counter++;}
+   
 }
+console.log(counter);
