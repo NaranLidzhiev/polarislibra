@@ -12,70 +12,33 @@ genres
 P.S. Функции вызывать не обязательно*/
 
 'use strict';
-let numberofFilms;
-
-function start() {
-   numberofFilms = +prompt("сколько фильмов вы уже просмотрели?", '');
-   while (numberofFilms == '' || numberofFilms == null || isNaN(numberofFilms)) {
-      numberofFilms = +prompt("сколько фильмов вы уже просмотрели?", '');
-
-   }
-}
-start();
-
-const personalMovieDB = {
-   count: numberofFilms,
-   movies: {},
-   actors: {},
-   genres: [],
-   privat: false
-
-};
-
-function remembermyfilms() {
-   for (let i = 0; i < 2; i++) {
-      const a = prompt('Один из последних просмотренных фильмов', ''),
-         b = +prompt('На сколько оцените его ?', '');
-
-      if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-         personalMovieDB.movies[a] = b;
-         console.log('done');
-      } else {
-         console.log('error');
-         i--;
-      }
-   }
-}
-
-remembermyfilms();
-
-function detectPersonalLevel() {
-   if (personalMovieDB.count < 10) {
-      console.log("Просмотрено удивительно малое количество фильмов ");
-   } else
-   if (personalMovieDB.count < 30 && personalMovieDB.count > 10) {
-      console.log("Вы средний класс ");
-   } else
-   if (personalMovieDB.count > 30) {
-      console.log("Вы задрот ");
-   }
-}
-
-detectPersonalLevel();
-
-function showMyDB(hidden) {
-   if (!hidden ) {
-      console.log(personalMovieDB);
-   }
-}
-showMyDB(personalMovieDB.privat);
-
-function writeYourGenres(likes)
+function first()
 {
- for (let i =0; i < 3; i++)
- {
-    likes[i]= prompt(`Ваш любимый жанр под номером ${i+1}` , '')
- }
+   // Do something
+   setTimeout(function()
+   {
+      console.log(1);
+   }, 500)
+
 }
 
-writeYourGenres(personalMovieDB.genres);
+function second ()
+{
+   console.log(2);
+}
+
+first()
+second()
+
+function learnJS(lang, callback)
+{
+   console.log(`я учу: ${lang}`)
+   callback();
+}
+
+function done()
+{
+   console.log('я прошел этот урок!');
+}
+
+learnJS('JavaScript', done);
