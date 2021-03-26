@@ -21,10 +21,14 @@ const options = {
        border: 'black',
        bg: 'red'
     },
-    
+    makeTest: function()
+    {
+       console.log("Test");
+    }
 }
-
-
+options.makeTest();
+const {border, bg} = options.colors;
+console.log(border);
 console.log(Object.keys(options).length);
 
 //console.log(options["colors"]["border"]);
@@ -44,4 +48,3 @@ console.log(Object.keys(options).length);
 //    } else  {console.log( `Свойство ${key} имеет значение ${options[key]}`); counter++;}
    
 // }
-//console.log(counter);
