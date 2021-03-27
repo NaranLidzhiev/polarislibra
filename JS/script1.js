@@ -13,27 +13,26 @@ P.S. Функции вызывать не обязательно*/
 
 'use strict';
 
-const arr = [21, 9, 3, 6, 8];
-arr.sort(compareNum);//сортировка цифр по порядку 
-console.log(arr);
+let a = 5,
+    b = a;
 
-function compareNum( a, b)// функция требуется для правильной сортировки
-{
-   return a -b;  
-}
-// arr[99] = 0;
-// console.log(arr.length);
-// console.log(arr);
+b = b + 5;
 
-arr.forEach(function(item, i, arr){
-     console.log(`${i}: ${item} внутри массива ${arr}`)  ;
-}
-);
+console.log(b);
+console.log(a);
 
-const str = prompt("", "");
-const products = str.split(", ");
-products.sort(); // сортировка по порядку букв
-console.log(products.join('; '));
+const obj = {
+   a: 5,
+   b: 1
+};
+
+const copy = obj;// передача по ссылке
+
+copy.a = 10;
+
+console.log(copy);
+console.log(obj);
+
 
 
 
