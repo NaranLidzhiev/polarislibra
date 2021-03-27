@@ -84,9 +84,27 @@ const video = ['youtube', 'vimeo', 'rutube'],
 
 console.log(internet);
 
+function log( a, b, c)
+{
+   console.log(a);
+   console.log(b);
+   console.log(c);
+}
 
 
+const num = [2, 5, 7];
 
+log(...num);//тут вот эта вот ... разбивает массив num на три элемента a,b,c, Пипец :/
+
+const array = ["a", "b"]; // способ копирования массива
+
+const q = 
+{
+   one: 1,
+   two: 2
+}
+
+const newObj = {...q};// еще один способ копирования объекта
 
 
 
