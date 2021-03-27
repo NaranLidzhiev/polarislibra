@@ -13,18 +13,18 @@ P.S. Функции вызывать не обязательно*/
 
 'use strict';
 
-let a = 5,
-   b = a;
+// let a = 5,
+//    b = a;
 
-b = b + 5;
+// b = b + 5;
 
-console.log(b);
-console.log(a);
+// console.log(b);
+// console.log(a);
 
-const obj = {
-   a: 5,
-   b: 1
-};
+// const obj = {
+//    a: 5,
+//    b: 1
+// };
 
 // const copy = obj; передача по ссылке
 
@@ -58,6 +58,14 @@ newNumbers.a = 10;
 newNumbers.c.x = 10;
 console.log(newNumbers);
 console.log(numbers);
+
+const add ={
+   d:17,
+   e:20
+}
+
+console.log(Object.assign(numbers, add));
+
 
 
 
