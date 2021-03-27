@@ -78,6 +78,13 @@ newArray[1] = 'алфавит учишь чтоль';
 console.log(newArray);
 console.log(oldArray);
 
+const video = ['youtube', 'vimeo', 'rutube'],
+      blogs = ['wordpress', 'livej', 'blogger'],
+      internet = [...video, ...blogs, 'vk', 'facebook']; //...video, ... blogs - таким образом мы вставляем содержание массивов video  и blogs  в массив internet
+
+console.log(internet);
+
+
 
 
 
