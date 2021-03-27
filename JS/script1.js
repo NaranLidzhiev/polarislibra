@@ -68,9 +68,15 @@ const add ={
 const clone = Object.assign({}, add);
 
 clone.d = 20;
-console.log(add);
-console.log(clone);
+// console.log(add);
+// console.log(clone);
 
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
+
+newArray[1] = 'алфавит учишь чтоль';
+console.log(newArray);
+console.log(oldArray);
 
 
 
