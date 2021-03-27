@@ -14,23 +14,32 @@ P.S. Функции вызывать не обязательно*/
 'use strict';
 
 const arr = [1, 2, 3, 6, 8];
+// arr[99] = 0;
+// console.log(arr.length);
+// console.log(arr);
 
-arr.pop();
-console.log(arr);
-arr.push(10);
-console.log(arr);
-
-for (let i =0; i < arr.length; i++)
-{
-   console.log(arr[i]);
+arr.forEach(function(item, i, arr){
+     console.log(`${i}: ${item} внутрим массива ${arr}`)  ;
 }
+);
 
-for (let value of arr)
-{
-   console.log(value);
-   //Этот цикл записывает поочередно 
-   //элементы arr в значение value
-}
+
+// arr.pop();
+// console.log(arr);
+// arr.push(10);
+// console.log(arr);
+
+// for (let i =0; i < arr.length; i++)
+// {
+//    console.log(arr[i]);
+// }
+
+// for (let value of arr)
+// {
+//    console.log(value);
+//    //Этот цикл записывает поочередно 
+//    //элементы arr в значение value
+// }
 
 
 //console.log(options["colors"]["border"]);
