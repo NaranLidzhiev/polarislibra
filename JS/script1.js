@@ -13,20 +13,32 @@ P.S. Функции вызывать не обязательно*/
 
 'use strict';
 
-const arr = [1, 2, 3, 6, 8];
+const arr = [21, 9, 3, 6, 8];
+arr.sort(compareNum);//сортировка цифр по порядку 
+console.log(arr);
+
+function compareNum( a, b)// функция требуется для правильной сортировки
+{
+   return a -b;  
+}
 // arr[99] = 0;
 // console.log(arr.length);
 // console.log(arr);
 
 arr.forEach(function(item, i, arr){
-     console.log(`${i}: ${item} внутрим массива ${arr}`)  ;
+     console.log(`${i}: ${item} внутри массива ${arr}`)  ;
 }
 );
 
 const str = prompt("", "");
 const products = str.split(", ");
-console.log(products);
-console.log(products[1]);
+products.sort(); // сортировка по порядку букв
+console.log(products.join('; '));
+
+
+
+
+
 
 
 
