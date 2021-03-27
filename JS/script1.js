@@ -64,7 +64,14 @@ const add ={
    e:20
 }
 
-console.log(Object.assign(numbers, add));
+
+const clone = Object.assign({}, add);
+
+clone.d = 20;
+console.log(add);
+console.log(clone);
+
+
 
 
 
