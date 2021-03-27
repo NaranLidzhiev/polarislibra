@@ -23,6 +23,13 @@ arr.forEach(function(item, i, arr){
 }
 );
 
+const str = prompt("", "");
+const products = str.split(", ");
+console.log(products);
+console.log(products[1]);
+
+
+
 
 // arr.pop();
 // console.log(arr);
