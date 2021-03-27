@@ -13,23 +13,25 @@ P.S. Функции вызывать не обязательно*/
 
 'use strict';
 
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-       border: 'black',
-       bg: 'red'
-    },
-    makeTest: function()
-    {
-       console.log("Test");
-    }
+const arr = [1, 2, 3, 6, 8];
+
+arr.pop();
+console.log(arr);
+arr.push(10);
+console.log(arr);
+
+for (let i =0; i < arr.length; i++)
+{
+   console.log(arr[i]);
 }
-options.makeTest();
-const {border, bg} = options.colors;
-console.log(border);
-console.log(Object.keys(options).length);
+
+for (let value of arr)
+{
+   console.log(value);
+   //Этот цикл записывает поочередно 
+   //элементы arr в значение value
+}
+
 
 //console.log(options["colors"]["border"]);
 
@@ -46,5 +48,5 @@ console.log(Object.keys(options).length);
 //          counter++
 //       }
 //    } else  {console.log( `Свойство ${key} имеет значение ${options[key]}`); counter++;}
-   
+
 // }
