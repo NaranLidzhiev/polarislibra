@@ -30,11 +30,13 @@ const soldier = {
    }
 };
 
-const jonh = {
-   health: 100,
-};
+const jonh = Object.create(soldier);
 
-// jonh.__proto__ = soldier;
- Object.setPrototypeOf(jonh, soldier);
+// const jonh = {
+//    health: 100,
+// };
+
+// // jonh.__proto__ = soldier;
+//  Object.setPrototypeOf(jonh, soldier);
 
 jonh.sayHello();
