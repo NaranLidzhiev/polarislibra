@@ -1,53 +1,23 @@
 
 'use strict';
 
-// To String
+const box = document.getElementById('box');
 
-// 1) 
-console.log(typeof(String(143)));
-// 2)
-console.log(typeof(5+ ''));
+console.log(box);
 
-const num = 5;
+const btns = document.getElementsByTagName('button');
 
-console.log(`https://vk.com/catalog/${num}` );
+console.log(btns[0]);
 
-const fornSize = 26 + 'px';
+const circles =  document.getElementsByClassName('circle');
+console.log(circles);
 
-// To Number
-//1)
-console.log(typeof(Number('4')));
+const hearts = document.querySelectorAll('.heart');
 
-//2)
+hearts.forEach(item => {
+    console.log(item);
+});
 
-console.log(typeof(+'4'));
+const oneHeart = document.querySelector('.heart');
+console.log(oneHeart);
 
-//3)
-console.log(typeof(parseInt("15px", 10)));
-
-let answ = +prompt("Hello", "");
-
-// To boolean
-
-//0, '', null , undefined, NaN; все эти ребята превращаются в falls в типе boolean
-
-let switcher = null;
-
-if (switcher)
-{
-   console.log('Working...');
-}
-
-switcher = 1;
-
-if (switcher)
-{
-   console.log('Working...');
-}
-
-// 2)
-console.log(typeof(Boolean('4')));
-
-//3)
- console.log(typeof(!!"44444"));
- 
