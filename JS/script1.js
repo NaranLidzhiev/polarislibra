@@ -43,4 +43,6 @@ wrapper.append(div);//после
 
 div.innerHTML = "<h1>Hello world</h1>";
 
+div.insertAdjacentHTML("afterend",'<h2>Hello</h2>'); // вставка html кода  после элемента 
+
 
