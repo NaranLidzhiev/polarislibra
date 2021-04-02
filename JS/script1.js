@@ -5,7 +5,8 @@ const box = document.getElementById('box'),
       btns = document.getElementsByTagName('button'),
       circles = document.getElementsByClassName('circle'),
       hearts = document.querySelectorAll('.heart'),
-      oneHeart = document.querySelector('.heart');
+      oneHeart = document.querySelector('.heart'),
+      wrapper = document.querySelector('.wrapper');
 
 box.style.backgroundColor = 'blue';
 box.style.width = '500px';
@@ -27,6 +28,7 @@ hearts.forEach(item => {
 const div = document.createElement('div'); // создаем элемент только в js файле
 //const text = document.createTextNode('Тут был я');
 
-div.classList.add('black');
+div.classList.add('black'); // придаем элементу класс со значением black
 
-document.body.append(div);
+//wrapper.append(div);
+wrapper.prepend(div);
