@@ -4,9 +4,10 @@
 const box = document.getElementById('box'),
       btns = document.getElementsByTagName('button'),
       circles = document.getElementsByClassName('circle'),
-      hearts = document.querySelectorAll('.heart'),
-      oneHeart = document.querySelector('.heart'),
-      wrapper = document.querySelector('.wrapper');
+      wrapper = document.querySelector('.wrapper'),
+      hearts = wrapper.querySelectorAll('.heart'), //идут от wrapper
+      oneHeart = wrapper.querySelector('.heart'); // идут от wrapper
+      
 
 box.style.backgroundColor = 'blue';
 box.style.width = '500px';
@@ -39,7 +40,7 @@ wrapper.append(div);//после
 //wrapper.removeChild(hearts[1]); //старый способ удаления
 //wrapper.replaceChild(circles[0], hearts[0]); старый способ замены элементов
 // //circles[0].remove(); удаление элемента
-// hearts[0].replaceWith(circles[0]); // замена элементов
+hearts[0].replaceWith(circles[0]); // замена элементов
 
 div.innerHTML = "<h1>Hello world</h1>";
 
