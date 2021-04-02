@@ -30,5 +30,11 @@ const div = document.createElement('div'); // создаем элемент то
 
 div.classList.add('black'); // придаем элементу класс со значением black
 
-//wrapper.append(div);
-wrapper.prepend(div);
+//wrapper.append(div);//после
+wrapper.prepend(div);//до
+//hearts[0].before(div);  вставка до определенного элемента
+hearts[0].after(div); // вставка после определенного элемента
+
+//circles[0].remove(); удаление элемента
+
+hearts[0].replaceWith(circles[0]);
