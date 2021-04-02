@@ -30,11 +30,17 @@ const div = document.createElement('div'); // создаем элемент то
 
 div.classList.add('black'); // придаем элементу класс со значением black
 
-//wrapper.append(div);//после
-wrapper.prepend(div);//до
-//hearts[0].before(div);  вставка до определенного элемента
-hearts[0].after(div); // вставка после определенного элемента
+wrapper.append(div);//после
+//wrapper.appendChild(div);
+// wrapper.prepend(div);//до
+// //hearts[0].before(div);  вставка до определенного элемента
+// hearts[0].after(div); // вставка после определенного элемента
+//wrapper.insertBefore(div, hearts[1]);//старый способ вставки до определенного элемента
+//wrapper.removeChild(hearts[1]); //старый способ удаления
+//wrapper.replaceChild(circles[0], hearts[0]); старый способ замены элементов
+// //circles[0].remove(); удаление элемента
+// hearts[0].replaceWith(circles[0]); // замена элементов
 
-//circles[0].remove(); удаление элемента
+div.innerHTML = "<h1>Hello world</h1>";
 
-hearts[0].replaceWith(circles[0]);
+
