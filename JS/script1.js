@@ -21,9 +21,17 @@ btns[0].addEventListener('click', ()=>{
     btns[1].classList.toggle('red');
 });
 
-//console.log(btns[0].className);
+console.log(btns[0].className);
 wrapper.addEventListener('click', (event) =>{
-    if(event.target && event.target.tagName == "BUTTON"){//Tagname таргета является именем таргета , только в верхнем регистре
+    if(event.target && event.target.matches("button.red")){//Tagname таргета является именем таргета , только в верхнем регистре
         console.log('HELLO');
     }
-})
+});
+// btns.forEach(btn =>{
+//     btn.addEventListener('click', ()=>{
+//         console.log('Hello');
+//     });
+// });
+const btn = document.createElement('button');
+btn.classList.add('red');
+wrapper.append(btn);
