@@ -1,39 +1,16 @@
-//touchstart
-// touchmove
-// touchend
-// touchenter
-// touchleave
-// touchcancel
+"use strict";
 
-window.addEventListener('DOMContentLoaded', () => {
-    const box = document.querySelector('.box');
-
-    box.addEventListener('touchstart', (e) => {
-        e.preventDefault();
-
-        console.log('Start');
-        console.log(e. targetTouches);
+const p = document.querySelectorAll('p');
+console.log(p);
 
 
-    });
 
-    box.addEventListener('touchmove', (e) => {
-        e.preventDefault();
+function loadScript(src){
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = false;
+    document.body.append(script)
+}
 
-        console.log(e.targetTouches[0].pageX);
-
-    });
-
-     box.addEventListener('touchend', (e) => {
-          e.preventDefault();
-
-          console.log('endless');
-
-      });
-
- });
-
-// touches 
-// targetTouches
-// changedTouches
-// https://hammerjs.github.io/ сайт который подгонит код под мобильные устройства
+loadScript("JS/script.js");
+loadScript("JS/some.js");
