@@ -1,37 +1,40 @@
-const btns = document.querySelectorAll('button'),
-      wrapper = document.querySelector('.buttons');
-//console.log(btns[0].classList.length);
-//console.log(btns[1].classList.add('red'));
-//console.log(btns[0].classList.remove('blue'));
-//console.log(btns[0].classList.toggle('blue'));
+window.addEventListener('DOMContentLoaded', () => {
 
-// if(btns[1].classList.contains('red'))
-// {
-//     console.log('red'); 
-// }
+    const tabs = document.querySelectorAll('.tabheader__item'),
+          tabsContent = document.querySelectorAll('.tabcontent'),
+          tabsParent = document.querySelector('.tabheader__items');
+   function hideTabContent(){//скрываем табы
+       tabsContent.forEach(item =>{
+           item.classList.add('hide');
+           item.classList.remove('show');
+       });
 
-btns[0].addEventListener('click', ()=>{
-    // if (!btns[1].classList.contains('red'))
-    // {
-    //     btns[1].classList.add('red');
-    // } else {
-    //     btns[1].classList.remove('red');
-    // }
+       tabs.forEach(item  => {
+           item.classList.remove('tabheader__item_active');
+       });
+   }
 
-    btns[1].classList.toggle('red');
+   function showTabContent(i) {
+       tabsContent[i].style.display = 'block';
+       tabs[i].classList.add('tabheader__item_active');
+   }
+
+   hideTabContent();
+
+   
+
+   tabsParent.addEventListener('click', (event )=> {
+       const target = event.target;
+       if(target && target.classList.contains('tabheader__item'))
+       {
+           tabs.forEach((item, i)=>{
+               if (target == item){
+                   hideTabContent();
+                   showTabContent(i);
+               }
+           });
+       }
+
+   });
+
 });
-
-console.log(btns[0].className);
-wrapper.addEventListener('click', (event) =>{
-    if(event.target && event.target.matches("button.red")){//Tagname таргета является именем таргета , только в верхнем регистре
-        console.log('HELLO');
-    }
-});
-// btns.forEach(btn =>{
-//     btn.addEventListener('click', ()=>{
-//         console.log('Hello');
-//     });
-// });
-const btn = document.createElement('button');
-btn.classList.add('red');
-wrapper.append(btn);
