@@ -30,8 +30,24 @@
 // const double = count.bind(2);//создаем объект double и присваиваем count контекст this в значении bind = 2
 // console.log(double(89));
 
-const btn = document.querySelector('button');
-addEventListener('click', function(){
-    this.style.background = 'red';//button в таком случае являеться контекстом функции
-});
+// const btn = document.querySelector('button');
+// addEventListener('click', function(){
+//     this.style.background = 'red';//button в таком случае являеться контекстом функции
+// });
 
+
+
+const obj ={
+    num: 5,
+    sayNumber: function(){
+        const say = () =>{
+            console.log(this);//this в стрелочных функциях не имееет своего контекста , а наследует родительский контекст
+            // тут оно наследует контекст функции sayNumber
+        }
+        say();
+
+    }
+};
+obj.sayNumber();
+
+const double = (a) => a*2;// можно так записать стрелочную функцию, если действия помещабтся в одну строку
