@@ -23,14 +23,9 @@
 
 // let  ivan = new User('Ivan', '18');//this в конструкторах и классах это новый экземпляр объекта
 
-function sayName(surname){
-    console.log(this);
-    console.log(this.name + surname);
+function count( num){
+     return this*num;
 }
 
-const user = {
-    name: 'James'
-};
-
-sayName.call(user, 'Shrute');
-sayName.call(user, ['Shrut']);
+const double = count.bind(2);//создаем объект double и присваиваем count контекст this в значении bind = 2
+console.log(double(89));
