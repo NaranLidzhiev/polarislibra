@@ -23,9 +23,15 @@
 
 // let  ivan = new User('Ivan', '18');//this в конструкторах и классах это новый экземпляр объекта
 
-function count( num){
-     return this*num;
-}
+// function count( num){
+//      return this*num;
+// }
 
-const double = count.bind(2);//создаем объект double и присваиваем count контекст this в значении bind = 2
-console.log(double(89));
+// const double = count.bind(2);//создаем объект double и присваиваем count контекст this в значении bind = 2
+// console.log(double(89));
+
+const btn = document.querySelector('button');
+addEventListener('click', function(){
+    this.style.background = 'red';//button в таком случае являеться контекстом функции
+});
+
