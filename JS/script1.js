@@ -12,13 +12,25 @@
 // };
 // obj.sum();
 
-function User(name, id){
-    this.name = name;
-    this.id = id;
-    this.Human = true;
-    this.hello = function(){
-        console.log(`Hello ${name}`);
-    };
+// function User(name, id){
+//     this.name = name;
+//     this.id = id;
+//     this.Human = true;
+//     this.hello = function(){
+//         console.log(`Hello ${name}`);
+//     };
+// }
+
+// let  ivan = new User('Ivan', '18');//this в конструкторах и классах это новый экземпляр объекта
+
+function sayName(surname){
+    console.log(this);
+    console.log(this.name + surname);
 }
 
-let  ivan = new User('Ivan', '18');//this в конструкторах и классах это новый экземпляр объекта
+const user = {
+    name: 'James'
+};
+
+sayName.call(user, 'Shrute');
+sayName.call(user, ['Shrut']);
