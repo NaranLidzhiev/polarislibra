@@ -1,7 +1,14 @@
 const persone = {
     name: 'Alex',
     tel: '+79054091119',
+    parents: {
+        mom: 'Olga',
+        dad: 'Mike'
+    }
 };
 
-console.log(JSON.stringify(persone));//переводим persone в JSON формат
-console.log(JSON.parse(JSON.stringify(persone)));//переводим persone в формате  JSON в обычный формат
+const clon = JSON.parse(JSON.stringify(persone));//создаем глубокую копию которая абсолютно не зависит от persone 
+clon.parents.mom = 'Ann';
+persone.parents.mom = 'Ann';
+console.log(persone);
+console.log(clon);
