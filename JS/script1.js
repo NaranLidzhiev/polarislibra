@@ -244,16 +244,18 @@ window.addEventListener('DOMContentLoaded', () => {
             //request.setRequestHeader('Content-type', 'multipart/form-data');
             const formData = new FormData(form);
             request.send(formData);
-            if (request.status === 200) {
-                console.log(request.response);
-                statusMessage.textContent = message.success;
-                form.reset();
-                setTimeout(() => {
-                    statusMessage.remove();
-                }, 2000);
-            } else {
-                statusMessage.textContent = message.failure;
-            }
+            request.addEventListener('load', ()=>{
+                if (request.status === 200) {
+                    console.log(request.response);
+                    statusMessage.textContent = message.success;
+                    form.reset();
+                    setTimeout(() => {
+                        statusMessage.remove();
+                    }, 2000);
+                } else {
+                    statusMessage.textContent = message.failure;
+                }
+            });
         });
     }
 });
