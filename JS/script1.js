@@ -1,52 +1,42 @@
 'use strict';
 
-// console.log('Запрос данных...');
+console.log('Проверка системы...');
 
-// const req = new Promise( (resolve, reject) => {
-//     setTimeout(() => {
-//         console.log('подготовка данных...');
-//         const product = {
-//             name: 'TV',
-//             price: 2000
-//         };
-//         resolve(product);
-//     }, 2000);
+const analize = new Promise((resolve, reject)=>{
+    setTimeout(()=>{
+        console.log('Получение данных...')
+        const system = {
+            energy: 21333242344,
+            air: 3000000,
+            atmospheresimulation: 'Earth atmosphere',
+            strength: 2112124
+        };
+        if (system.energy< 23424){
+            reject();
+        }
+        resolve(system);
 
-// });
+    }, 2000);
 
-// req.then((product) => {
-//   return new Promise((resolve, reject) =>{
-//       setTimeout(()=>{
-//           product.status = 'order';
-//           resolve(product);
-//       }, 2000);
-//   });
-// }).then(data => {
-//     data.modify = true;
-//     return data;
-// }).then((data)=>{
-//     console.log(data);
-// }).catch(()=>{
-//     console.error('Произошла ошибка');
-// }).finally(()=>{
-//     console.log('all complited');
-// });
-
-const test = time => {
-    return new Promise(resolve => {
-        setTimeout(() => resolve(), time);
-    });
-};
-
-// test(1000).then(() => {  console.log('1000 ms');});
-
-// test(2000).then(() => {console.log('2000 ms');});
-
-// Promise.all([test(1000), test(2000)]).then(()=>{
-//   console.log('all test has been success');
-// });
-
-Promise.race([test(1000), test(2000)]).then(()=>{
-    console.log('all test has been success');
 });
-  
+
+analize.then((system)=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+            console.log(system);
+            console.log('Все системы в норме...');
+        }, 2000);
+        setTimeout(()=>{
+            console.log('Начинаю подсчет экипажа...');
+            system.members = '90';
+            resolve(system);
+        }, 2000);
+    });
+}).then(data=>{
+    console.log(`Количество экипажа ${data.members}`);
+}).catch(()=>{
+    console.log('Использую резервный генератор');
+}).finally(()=>{
+    console.log('Анализ систем завершен');
+});
+
